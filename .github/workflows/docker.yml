@@ -37,7 +37,7 @@ jobs:
       #     push: true
       #     tags: ushamandya/simplewhale:latest
       - name: build
-        run: docker build -t back
+        run: docker builder build -t back
       - name: Tags
         run: |
           docker tag back ${{ secrets.DOCKER_HUB_USERNAME }}/back:${{ github.sha }}
