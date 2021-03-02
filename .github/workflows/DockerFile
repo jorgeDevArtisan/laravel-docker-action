@@ -2,3 +2,9 @@ FROM php:7.4-fpm-alpine
 
 RUN docker-php-ext-install pdo pdo_mysql
 
+FROM node
+WORKDIR /opt/back
+COPY . .
+RUN npm install
+EXPOSE 3000
+ENTRYPOINT ["npm", "start"]
