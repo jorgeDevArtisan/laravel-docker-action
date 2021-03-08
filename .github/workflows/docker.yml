@@ -48,7 +48,7 @@ jobs:
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: ./
-          file: ./Dockerfile
+          file: ./DockerFile
           target: test
       - name: Build and push
         id: docker_build
@@ -56,7 +56,7 @@ jobs:
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: ./
-          file: ./Dockerfile
+          file: ./DockerFile
           target: prod
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.prep.outputs.tags }}
